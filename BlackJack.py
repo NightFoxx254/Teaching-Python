@@ -43,3 +43,27 @@ for i in range(onek):
 				chips[i] -= bets[i]
 		#if the player says hit for more cards generate them a new card, show them the card, and check if they went over 21 if so print BUSTTTTTTTTTTTTATTTTTTTSSTSTSTSTTTTTTTT
   
+#make list called hand, give it 2 cards
+hand = [random.randint(1,11),random.randint(1,11)]
+#check if the sum of the hand < 16 if it is hit and if not don't
+while sum(hand) < 16:
+	hand.append(random.randint(1,11))
+	if sum(hand) > 21:
+		print("computer busted")
+
+#loop through all of the players
+#check if they haven't already lost
+#check if the sum of their hand is larger than the sum of the computers hand
+for i in range(onek):
+	if playersNotLost[i]:
+		if sum(hand) < sum(cards[i]):
+			print("you beat the computer!!")
+			chips[i] += bets[i]
+		else:
+			
+			print("computer had", sum(hand))			
+			print("you LOST!!")
+			chips[i] -= bets[i]
+
+
+	
