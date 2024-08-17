@@ -8,48 +8,48 @@
 
 
 onek = input("what is your arithmancy problem?")
-won = int(onek[0])
-too = int(onek[1])
+
+# won = int(onek[0])
+# too = int(onek[2]) #You wrote position 1 not 2 
+
+
+won = []
+too = []
 
 
 
 
 
-
-if onek == "+":
-  print(won + too == treek)
-elif onek == "-":
-  print(won - too == treek)
-elif onek == "/":
-  print(won / too == treek)
-elif onek == "*":
-  print(won * too == treek)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+if "+" in onek: # you were checking the entirety of the input not just position one which is the operation
+  threek = onek.find("+")
+  for i in range(threek):
+    won.append(int(onek[i]))
+  for i in range(len(onek)-threek-1):
+    too.append(int(onek[i+threek+1]))
+  print(int(str(won))+int(str(too))) # you wrote == and you wrote == threek
+elif "-" in onek:
+  threek = onek.find("-")
+  for i in range(threek):
+    won.append(int(onek[i]))
+  for i in range(len(onek)-threek-1):
+    too.append(int(onek[i+threek+1]))
+  print(int(str(won))+int(str(too))) # you wrote == and you wrote == threek
+elif "/" in onek:
+  threek = onek.find("/")
+  for i in range(threek):
+    won.append(int(onek[i]))
+  for i in range(len(onek)-threek-1):
+    too.append(int(onek[i+threek+1]))
+  print(int(str(won))+int(str(too))) # you wrote == and you wrote == threek
+elif "*" in onek:
+  threek = onek.find("*")
+  for i in range(threek):
+    won.append(int(onek[i]))
+  for i in range(len(onek)-threek-1):
+    too.append(int(onek[i+threek+1]))
+  print(int(str(won))+int(str(too))) # you wrote == and you wrote == threek
+else:
+  print("Sorry that didn't work")
 
 #you can get the position of an input 
 #like this  input[1] and find out what the operation and numbers are with that
